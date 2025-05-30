@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Money Manager</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#28a745', // Main Green
+            primaryHover: '#218838', // Darker Green for hover
+            secondary: '#e6f4ea', // Light Green for backgrounds
+            accent: '#F59E0B', // Amber - kept for potential use (e.g. pie chart)
+            background: '#F3F4F6', // Light Gray page background
+            card: '#FFFFFF', // White for general cards like filters
+            textPrimary: '#1F2937', // Dark Gray/Black
+            textSecondary: '#4B5563', // Lighter Gray
+            textOnPrimary: '#FFFFFF', // White text for primary backgrounds
+            danger: '#dc3545', // Red for errors/negative balance
+          },
+        }
+      }
+    }
+  </script>
+<style>
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn { 
+    animation: fadeIn 0.3s ease-out; 
+  }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://esm.sh/react-router-dom@^6.24.0",
+    "react/": "https://esm.sh/react@^19.0.0/",
+    "react": "https://esm.sh/react@^19.0.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.0.0/",
+    "recharts": "https://esm.sh/recharts@^2.15.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-background text-textPrimary">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
